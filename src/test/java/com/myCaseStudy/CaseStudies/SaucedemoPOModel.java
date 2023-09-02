@@ -38,14 +38,13 @@ public class SaucedemoPOModel {
 	{
 		return new Object[][] {{"standard_user","secret_sauce"}};
 	}
-
-
+	
 	@Test(dataProvider = "data")
 	public void E2EScenario(String userName, String password) {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(userName, password); //Login to SauceDemo website
 		InventoryPage inventoryPage = new InventoryPage(driver);
-		Assert.assertEquals(inventoryPage.getAppLogoText(), "Swag Labs"); // Verify the Logo text safsfsdf
+		Assert.assertEquals(inventoryPage.getAppLogoText(), "Swag Labs"); // Verify the Logo text
 		Assert.assertEquals(inventoryPage.getTitle(), "Products"); // Verify the title of the page
 
 		//Take a screenshot of the products page
@@ -53,7 +52,7 @@ public class SaucedemoPOModel {
 		takeScreenshots.takeScreenshot(driver);
 
 		inventoryPage.addToCart(); // Adding items to the cart
-		inventoryPage.clickShoppingcart();		// Open shopping cart
+		inventoryPage.clickShoppingcart(); // Open shopping cart
 		ShoppingCartPage shoppingCart = new ShoppingCartPage(driver);
 		Assert.assertEquals(shoppingCart.verifyTheCart(), 3); //Verify if the cart has items
 		takeScreenshots.takeScreenshot(driver); //Take a screenshot of the cart
