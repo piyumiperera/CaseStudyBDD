@@ -1,6 +1,5 @@
 package com.myCaseStudy.CaseStudies;
 
-
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -46,7 +45,7 @@ public class SaucedemoPOModel {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(userName, password); //Login to SauceDemo website
 		InventoryPage inventoryPage = new InventoryPage(driver);
-		Assert.assertEquals(inventoryPage.getAppLogoText(), "Swag Labs"); // Verify the Logo text
+		Assert.assertEquals(inventoryPage.getAppLogoText(), "Swag Labs"); // Verify the Logo text safsfsdf
 		Assert.assertEquals(inventoryPage.getTitle(), "Products"); // Verify the title of the page
 
 		//Take a screenshot of the products page
